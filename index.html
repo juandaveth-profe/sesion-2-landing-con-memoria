@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juan David Reyes - Portafolio</title>
+  <meta name="description" content="Portafolio profesional de Juan David Reyes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    /* Base Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      color: #333;
+      line-height: 1.6;
+      background-color: #fafafa;
+    }
+
+    /* Typography */
+    h1, h2, h3 {
+      line-height: 1.2;
+    }
+
+    /* Layout Utilities */
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 80px 0;
+    }
+
+    /* Header & Nav (Mobile First) */
+    .header {
+      background-color: #e0f2fe;
+      color: #1D1128;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .nav-container {
+      display: flex;
+      flex-direction: column; /* Stack logo and links on mobile */
+      align-items: center;
+      padding: 20px;
+      gap: 15px;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: linear-gradient(90deg, #1D1128, #5941A9);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-link {
+      color: #1D1128;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: color 0.3s ease, transform 0.3s ease;
+      padding-bottom: 2px;
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav-link:hover {
+      color: #5941A9;
+      border-bottom: 2px solid #5941A9;
+    }
+
+    /* Desktop override for Nav */
+    @media (min-width: 768px) {
+      .nav-container {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 25px 50px;
+      }
+    }
+
+    /* Experience Section */
+    .bg-purple {
+      background-color: #5941A9;
+      color: white;
+      position: relative;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      margin-bottom: 50px;
+      text-align: center;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .text-dark {
+      color: #1D1128;
+    }
+
+    .experience-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    /* Experience Cards (Glassmorphism Style) */
+    .experience-card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 30px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+
+    .experience-card:hover {
+      transform: translateY(-8px);
+      background: rgba(255, 255, 255, 0.12);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    }
+
+    .company {
+      font-size: 1.6rem;
+      margin-bottom: 5px;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .role {
+      display: inline-block;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #e0d8f0;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      background-color: rgba(0,0,0,0.2);
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+
+    .description {
+      font-size: 1.1rem;
+      color: #f1f1f1;
+      font-weight: 300;
+    }
+
+    /* Desktop overrides for Experience */
+    @media (min-width: 768px) {
+      .section-title {
+        font-size: 2.8rem;
+      }
+      
+      .experience-card {
+        padding: 40px 50px;
+      }
+    }
+
+    /* Contact Section */
+    #contacto {
+      background-color: #ffffff;
+    }
+
+    .contact-text {
+      text-align: center;
+      font-size: 1.3rem;
+      color: #666;
+      font-weight: 300;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <nav class="nav-container">
+      <h1 class="logo">Juan David Reyes P.</h1>
+      <div class="nav-links">
+        <a href="#experiencia" class="nav-link">Experiencia</a>
+        <a href="#contacto" class="nav-link">Contacto</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="experiencia" class="section bg-purple">
+      <div class="container">
+        <h2 class="section-title">Experiencia</h2>
+        <ul class="experience-list">
+          <li class="experience-card">
+            <h3 class="company">Status</h3>
+            <span class="role">Community Builder</span>
+            <p class="description">Primer trabajo en el mundo de las criptomonedas.</p>
+          </li>
+          <li class="experience-card">
+            <h3 class="company">Devcon</h3>
+            <span class="role">Organizador del evento</span>
+            <p class="description">2022</p>
+          </li>
+          <li class="experience-card">
+            <h3 class="company">ETH Kipu</h3>
+            <span class="role">Fundador</span>
+            <p class="description">Trabajo más reciente.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contacto" class="section">
+      <div class="container">
+        <h2 class="section-title text-dark">Datos de contacto</h2>
+        <p class="contact-text">Ponte en contacto para futuras oportunidades.</p>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>
