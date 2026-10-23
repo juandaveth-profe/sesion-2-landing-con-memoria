@@ -183,14 +183,137 @@
 
     /* Contact Section */
     #contacto {
-      background-color: #ffffff;
+      background-color: #fafafa;
     }
 
     .contact-text {
       text-align: center;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       color: #666;
       font-weight: 300;
+      margin-bottom: 40px;
+    }
+
+    .contact-wrapper {
+      max-width: 580px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 35px 25px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    @media (min-width: 768px) {
+      .contact-wrapper {
+        padding: 45px 40px;
+      }
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      text-align: left;
+    }
+
+    .form-label {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #1D1128;
+    }
+
+    .form-input,
+    .form-textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: 1.5px solid #e2e8f0;
+      background-color: #f8fafc;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1rem;
+      color: #1D1128;
+      transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+      outline: none;
+    }
+
+    .form-input:focus,
+    .form-textarea:focus {
+      border-color: #5941A9;
+      background-color: #ffffff;
+      box-shadow: 0 0 0 4px rgba(89, 65, 169, 0.12);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .btn-submit {
+      padding: 15px 28px;
+      background-color: #5941A9;
+      color: #ffffff;
+      border: none;
+      border-radius: 12px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 14px rgba(89, 65, 169, 0.25);
+      margin-top: 5px;
+    }
+
+    .btn-submit:hover:not(:disabled) {
+      background-color: #473289;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(89, 65, 169, 0.35);
+    }
+
+    .btn-submit:active:not(:disabled) {
+      transform: translateY(0);
+    }
+
+    .btn-submit:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+
+    .form-status {
+      padding: 14px 16px;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-align: center;
+      display: none;
+      line-height: 1.4;
+    }
+
+    .form-status.success {
+      background-color: #ecfdf5;
+      color: #065f46;
+      border: 1px solid #a7f3d0;
+    }
+
+    .form-status.error {
+      background-color: #fef2f2;
+      color: #991b1b;
+      border: 1px solid #fecaca;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #1D1128;
+      color: #a0aec0;
+      padding: 30px 20px;
+      text-align: center;
+      font-size: 0.95rem;
     }
   </style>
 </head>
@@ -232,11 +355,40 @@
 
     <section id="contacto" class="section">
       <div class="container">
-        <h2 class="section-title text-dark">Datos de contacto</h2>
+        <h2 class="section-title text-dark">Contacto</h2>
         <p class="contact-text">Ponte en contacto para futuras oportunidades.</p>
+        <div class="contact-wrapper">
+          <form id="contact-form" class="contact-form">
+            <div class="form-group">
+              <label for="nombre" class="form-label">Nombre</label>
+              <input type="text" id="nombre" name="nombre" class="form-input" placeholder="Tu nombre" required autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="correo" class="form-label">Correo</label>
+              <input type="email" id="correo" name="correo" class="form-input" placeholder="tu@correo.com" required autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label for="mensaje" class="form-label">Mensaje</label>
+              <textarea id="mensaje" name="mensaje" class="form-textarea" rows="4" placeholder="¿En qué te puedo ayudar?" required></textarea>
+            </div>
+            <button type="submit" id="submit-btn" class="btn-submit">
+              <span class="btn-text">Enviar</span>
+              <span class="btn-loader" style="display: none;">Enviando...</span>
+            </button>
+            <div id="form-status" class="form-status" role="alert"></div>
+          </form>
+        </div>
       </div>
     </section>
   </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Juan David Reyes Páez. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="app.js"></script>
 </body>
 
 </html>
